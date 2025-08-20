@@ -55,28 +55,11 @@ function App() {
         background: linear-gradient(to bottom, #2563eb, #7c3aed);
       }
       
-      /* Liquid Glass Effects */
-      .backdrop-blur-2xl {
-        backdrop-filter: blur(40px);
-        -webkit-backdrop-filter: blur(40px);
-      }
-      
       /* Enhanced smooth transitions */
       * {
         transition-property: transform, opacity, background-color, border-color, color, fill, stroke, box-shadow, backdrop-filter;
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;
-      }
-      
-      /* Liquid animations */
-      @keyframes liquidFloat {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        33% { transform: translateY(-20px) rotate(1deg); }
-        66% { transform: translateY(-10px) rotate(-1deg); }
-      }
-      
-      .animate-liquid {
-        animation: liquidFloat 6s ease-in-out infinite;
       }
     `;
     document.head.appendChild(style);

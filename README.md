@@ -29,3 +29,22 @@ This portfolio is built to:
 ---
 
 ## 📂 Project Structure
+├── index.html
+├── /assets
+├── /css
+├── /js
+└── README.md
+
+
+---
+
+## 📬 Contact
+- **GitHub:** [YKUNAKORN](https://github.com/YKUNAKORN)
+- **LinkedIn:** [Add your LinkedIn link]
+- **Email:** [Add your email]
+
+---
+
+## 📄 License
+This project is intended for **personal use and showcase only**.  
+If you want others to use or modify it, add a license (e.g., MIT).

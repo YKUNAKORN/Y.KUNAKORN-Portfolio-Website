@@ -52,7 +52,7 @@ const About = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             About Me
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <p className="font-['IBM_Plex_Mono'] text-l text-white/70 max-w-3xl mx-auto">
             A developer passionate about creating technology that can change the world
           </p>
         </div>

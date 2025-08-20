@@ -52,7 +52,7 @@ const Hero = () => {
           <p className="text-xl sm:text-2xl lg:text-3xl text-white/80 mb-4 font-light">
             Full Stack Developer & Creative Technologist
           </p>
-          <p className="font-['IBM_Plex_Mono'] text-lg sm:text-xl text-white/60 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-['IBM_Plex_Mono'] text-lg sm:text-l text-white/60 mb-8 max-w-3xl mx-auto leading-relaxed">
             Crafting modern technology and impressive user experiences through 
             thoughtful design and development with attention to every detail
           </p>
@@ -68,13 +68,13 @@ const Hero = () => {
               <Github className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-200" />
             </a>
             <a
-              href="#contact"
+              href="https://www.linkedin.com/in/kunakorn-yamngam-932069338/"
               className="group p-3 bg-white/10 rounded-full backdrop-blur-lg hover:bg-white/20 transition-all duration-300 hover:scale-110"
             >
               <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-200" />
             </a>
             <a
-              href="#contact"
+              href="mailto:kunakorn.contact@gmail.com"
               className="group p-3 bg-white/10 rounded-full backdrop-blur-lg hover:bg-white/20 transition-all duration-300 hover:scale-110"
             >
               <Mail className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-200" />

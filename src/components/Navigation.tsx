@@ -7,7 +7,7 @@ const Navigation = () => {
   const sections = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
-    { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'experience', label: 'path', icon: Briefcase },
     { id: 'projects', label: 'Projects', icon: FolderOpen },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
@@ -52,8 +52,8 @@ const Navigation = () => {
 
   return (
     <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-gray-900/80 rounded-3xl px-4 py-3 shadow-2xl backdrop-blur-lg">
-        <div className="flex items-center space-x-2">
+      <div className="bg-gray-700/20 rounded-3xl px-4 py-3 shadow-2xl backdrop-blur-lg">
+        <div className="flex items-center space-x-5">
           {sections.map((section) => {
             const IconComponent = section.icon;
             const isActive = activeSection === section.id;
@@ -64,7 +64,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection(section.id)}
                 className={`group flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 transform ${
                   isActive
-                    ? 'bg-white/20 scale-110 shadow-lg shadow-white/10'
+                    ? 'bg-white/20 scale-110 shadow-lg shadow-white/10 px-10'
                     : 'hover:bg-white/10 hover:scale-105'
                 }`}
               >
