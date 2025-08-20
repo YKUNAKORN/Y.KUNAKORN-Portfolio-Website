@@ -28,16 +28,6 @@ This portfolio is built to:
 
 ---
 
-## 📂 Project Structure
-├── index.html
-├── /assets
-├── /css
-├── /js
-└── README.md
-
-
----
-
 ## 📬 Contact
 - **GitHub:** [YKUNAKORN](https://github.com/YKUNAKORN)
 - **LinkedIn:** [Add your LinkedIn link]
