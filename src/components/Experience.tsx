@@ -24,49 +24,35 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Senior Full Stack Developer", 
-      company: "Tech Innovation Co.",
-      period: "2023 - Present",
+      title: "Agentic AI for Healthcare Hackathon", 
+      company: "CMKL University",
+      period: "31 July - 2 August 2025",
       location: "Bangkok, Thailand",
-      description: "Develop and maintain large-scale web applications using React, Node.js, and AWS technologies",
+      description: "Creating healthcare solutions with our Inttelligent Agentic AI",
       achievements: [
-        "Improved system performance by 40%",
-        "Led development team for 3 major projects", 
-        "Designed and developed APIs supporting over 100,000 users"
+        "Developed a prototype for Agentic-AI patient management system",
+        "Implemented AI-driven patient FAQ response system", 
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Creative Digital Agency",
-      period: "2021 - 2023", 
+      title: "SWU Metaverse workshop and competition",
+      company: "Srinakharinwirot University",
+      period: "7 March - 8 March 2025", 
       location: "Bangkok, Thailand",
-      description: "Developed websites and web applications for diverse business clients",
+      description: "Hand on workshop and competition to create a Srinakharinwirot University into metaverse",
       achievements: [
-        "Developed over 50 website projects",
-        "Created award-winning UI/UX designs",
-        "Improved user experience by 60%"
+        "Designed and developed a virtual campus environment",
+        "Workshop on Unity and Blender for 3D modeling",
       ]
     },
-    {
-      title: "Junior Web Developer",
-      company: "Startup Hub Thailand",
-      period: "2020 - 2021",
-      location: "Bangkok, Thailand", 
-      description: "Started career in web development, learning and developing technology skills",
-      achievements: [
-        "Rapidly learned new technologies",
-        "Built prototypes for 10+ startups",
-        "Recognized as Developer of the Year"
-      ]
-    }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "King Mongkut's University of Technology Thonburi",
-      period: "2016 - 2020",
-      gpa: "3.75"
+      degree: "Bachelor of Engineering in Computer Engineering",
+      school: "Srinakharinwirot University",
+      period: "2023 - present",
+      gpa: "3.20"
     }
   ];
 
@@ -77,8 +63,8 @@ const Experience = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Experience
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Work and education journey that creates quality results
+          <p className="font-['IBM_Plex_Mono'] text-xl text-white/70 max-w-3xl mx-auto">
+            Experience and education journey that creates quality results
           </p>
         </div>
 
@@ -87,7 +73,7 @@ const Experience = () => {
           <div className="lg:col-span-2">
             <h3 className="fade-in-up opacity-0 text-2xl font-bold text-white mb-8 flex items-center"> 
               <div className="w-2 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full mr-4"></div>
-              Work Experience
+              Experience
             </h3>
             <div className="space-y-8">
               {experiences.map((exp, index) => (
@@ -162,11 +148,11 @@ const Experience = () => {
               <div className="bg-white/5 backdrop-blur-2xl rounded-2xl p-6 border border-white/10 shadow-xl shadow-black/10">
                 <div className="space-y-4">
                   {[
-                    { skill: 'React/Next.js', level: 95 },
-                    { skill: 'TypeScript', level: 90 },
-                    { skill: 'Node.js', level: 85 },
-                    { skill: 'Python', level: 80 },
-                    { skill: 'AWS/Docker', level: 75 }
+                    { skill: 'React/Next.js', level: 76 },
+                    { skill: 'Node.js', level: 69 },
+                    { skill: 'Python', level: 70 },
+                    { skill: 'TypeScript', level: 52 },
+                    { skill: 'AWS/Docker', level: 55 }
                   ].map((item, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-2">

@@ -15,7 +15,7 @@ const Footer = () => {
               Y.KUNAKORN
             </div>
             <p className="text-white/50 flex items-center justify-center md:justify-start">
-              Made with <Heart className="w-4 h-4 text-red-400 mx-1" /> and React
+              "You will nerver find a time for anything if you want time you must make it""
             </p>
           </div>
           

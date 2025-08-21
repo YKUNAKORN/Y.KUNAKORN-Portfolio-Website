@@ -35,7 +35,7 @@ const Contact = () => {
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-['IBM_Plex_Mono'] text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Ready to collaborate on your next project? Let's create something amazing together.
           </p>
         </div>
@@ -111,7 +111,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Phone</p>
-                    <p className="text-white font-medium">+66 XX-XXX-XXXX</p>
+                    <p className="text-white font-medium">+66 95 467 8926</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
@@ -120,7 +120,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Email</p>
-                    <p className="text-white font-medium">y.kunakorn@example.com</p>
+                    <p className="text-white font-medium">kunakorn.contact@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
@@ -140,7 +140,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-white mb-8">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 <a
-                  href="https://instagram.com/y.kunakorn"
+                  href="https://www.instagram.com/this.kao/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-2xl backdrop-blur-xl bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-white/10 hover:from-pink-500/20 hover:to-purple-500/20 hover:scale-105 transition-all duration-500 group"
@@ -149,7 +149,7 @@ const Contact = () => {
                   <span className="text-white font-medium">Instagram</span>
                 </a>
                 <a
-                  href="https://facebook.com/y.kunakorn"
+                  href="https://web.facebook.com/kao.kunakorn.7/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-2xl backdrop-blur-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-white/10 hover:from-blue-500/20 hover:to-cyan-500/20 hover:scale-105 transition-all duration-500 group"
@@ -158,7 +158,7 @@ const Contact = () => {
                   <span className="text-white font-medium">Facebook</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/y-kunakorn"
+                  href="https://www.linkedin.com/in/kunakorn-yamngam-932069338/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-2xl backdrop-blur-xl bg-gradient-to-r from-blue-600/10 to-indigo-600/10 border border-white/10 hover:from-blue-600/20 hover:to-indigo-600/20 hover:scale-105 transition-all duration-500 group col-span-2"

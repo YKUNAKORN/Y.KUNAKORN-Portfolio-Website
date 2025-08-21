@@ -53,7 +53,7 @@ const About = () => {
             About Me
           </h2>
           <p className="font-['IBM_Plex_Mono'] text-l text-white/70 max-w-3xl mx-auto">
-            A developer passionate about creating technology that can change the world
+            A Full Stack Developer with a passionate abpout website development and design. Skill in React.js JavaScript, and Python, with a focus on creating modern, responsive, and user-friendly web applications.
           </p>
         </div>
 
@@ -61,19 +61,19 @@ const About = () => {
           {/* Personal Story */}
           <div className="fade-in-up opacity-0">
             <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl shadow-black/20">
-              <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold text-white mb-6">My Journy</h3>
+              <p className="font-['IBM_Plex_Mono'] text-white/70 leading-relaxed mb-6">
                 I'm a developer with years of experience creating web applications and systems 
                 that truly serve users. With a passion for technology and design, 
                 I'm committed to developing high-quality work and creating great user experiences.
               </p>
-              <p className="text-white/70 leading-relaxed mb-6">
+              <p className="font-['IBM_Plex_Mono'] text-white/70 leading-relaxed mb-6">
                 I believe good technology should be easy to use, beautiful, and solve real problems. 
                 With experience working on diverse projects, 
                 I'm ready to help turn your ideas into reality.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['React', 'TypeScript', 'Node.js', 'Python', 'Docker', 'AWS'].map((tech) => (
+                {['Javascript', 'TypeScript', 'React.js', 'Node.js', 'Next.js', 'Python', 'Docker', 'AWS'].map((tech) => (
                   <span
                     key={tech}
                     className="px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full text-sm font-medium text-white border border-white/20"
@@ -99,7 +99,7 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-2">{skill.title}</h4>
-                    <p className="text-white/60 leading-relaxed">{skill.description}</p>
+                    <p className="font-['IBM_Plex_Mono'] text-white/60 leading-relaxed">{skill.description}</p>
                   </div>
                 </div>
               </div>

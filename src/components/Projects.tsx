@@ -86,28 +86,28 @@ const Projects = () => {
   // Featured projects (mock data for showcase)
   const featuredProjects = [
     {
-      title: "E-Commerce Platform", 
-      description: "Full-featured e-commerce platform using React and Node.js with payment system and inventory management",
+      title: "MyFavFood", 
+      description: "Backend management restaurant system that help employee can do everything in one stop service OPS",
       image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["HTML", "CSS", "Node.js", "MySQL"],
       liveUrl: "https://demo-ecommerce.com",
-      githubUrl: "https://github.com/YKUNAKORN"
+      githubUrl: "https://github.com/YKUNAKORN/MyFavFood-Project"
     },
     {
-      title: "Task Management App", 
-      description: "Modern task management application with real-time collaboration features",
+      title: "CareFeine App", 
+      description: "A mobile app for managing litmit your caffeine intake and track your health for a day",
       image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
+      technologies: ["Fultter", "Figma",],
       liveUrl: "https://task-manager-demo.com",
-      githubUrl: "https://github.com/YKUNAKORN"
+      githubUrl: "https://github.com/YKUNAKORN/CareFeine"
     },
     {
-      title: "Data Analytics Dashboard", 
-      description: "Interactive data analytics dashboard with beautiful graphs and charts",
+      title: "Do-Covid", 
+      description: "The website that report Covid-19 situation in Thailand with real-time data and statistics",
       image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "D3.js", "Python", "FastAPI"],
+      technologies: ["HTML", "CSS", "Javascript", "FastAPI"],
       liveUrl: "https://analytics-demo.com",
-      githubUrl: "https://github.com/YKUNAKORN"
+      githubUrl: "https://github.com/YKUNAKORN/Do-Covid-2021"
     }
   ];
 
@@ -118,8 +118,8 @@ const Projects = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             My Projects
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Projects and work that showcase development capabilities and experience
+          <p className="font-['IBM_Plex_Mono'] text-l text-white/70 max-w-3xl mx-auto">
+            Project that showcase development capabilities and experience
           </p>
         </div>
 
@@ -148,7 +148,7 @@ const Projects = () => {
                   <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <p className="text-white/70 mb-4 leading-relaxed text-sm">
+                  <p className="font-['IBM_Plex_Mono'] text-white/70 mb-4 leading-relaxed text-sm">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
