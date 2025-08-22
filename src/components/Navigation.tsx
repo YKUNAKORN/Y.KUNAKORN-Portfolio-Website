@@ -7,7 +7,7 @@ const Navigation = () => {
   const sections = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
-    { id: 'experience', label: 'path', icon: Briefcase },
+    { id: 'experience', label: 'Path', icon: Briefcase },
     { id: 'projects', label: 'Projects', icon: FolderOpen },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
@@ -52,11 +52,11 @@ const Navigation = () => {
 
   return (
     <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-gray-700/20 rounded-3xl px-4 py-3 shadow-2xl backdrop-blur-lg">
+      <div className="bg-gray-900/25 rounded-3xl px-4 py-3 shadow-2xl backdrop-blur-lg">
         <div className="flex items-center space-x-5">
           {sections.map((section) => {
             const IconComponent = section.icon;
-            const isActive = activeSection === section.id;
+            const isActive = activeSection === section.id;  
             
             return (
               <button
@@ -79,7 +79,7 @@ const Navigation = () => {
                   {section.label}
                 </span>
                 {isActive && (
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full shadow-lg shadow-blue-400/50" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full shadow-lg shadow-blue-400/50" />
                 )}
               </button>
             );

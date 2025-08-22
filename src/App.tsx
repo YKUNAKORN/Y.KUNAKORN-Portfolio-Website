@@ -47,12 +47,11 @@ function App() {
       }
       
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-        border-radius: 8px;
+        background-color: #000000;
       }
       
       ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(to bottom, #2563eb, #7c3aed);
+        background: linear-gradient(to bottom, #34D399, #22D3EE);
       }
       
       /* Enhanced smooth transitions */

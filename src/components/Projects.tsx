@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, Star, GitFork, Eye } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ExternalLink, Github, Star, GitFork } from 'lucide-react';
 
 interface Repository {
   id: number;
@@ -10,20 +10,18 @@ interface Repository {
   language: string;
   stargazers_count: number;
   forks_count: number;
-  watchers_count: number;
   updated_at: string;
   topics: string[];
 }
 
 const Projects = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRepositories = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/YKUNAKORN/repos?sort=updated&per_page=12');
+        const response = await fetch('https://api.github.com/users/YKUNAKORN/repos?sort=updated&per_page=9');
         const data = await response.json();
         setRepositories(data.filter((repo: Repository) => !repo.name.includes('.github')));
       } catch (error) {
@@ -35,24 +33,6 @@ const Projects = () => {
 
     fetchRepositories();
   }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fadeInUp');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '-50px' }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.fade-in-up');
-    elements?.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
-  }, [repositories]);
 
   const getLanguageColor = (language: string): string => {
     const colors: { [key: string]: string } = {
@@ -66,121 +46,83 @@ const Projects = () => {
       React: '#61dafb',
       Vue: '#4fc08d',
       PHP: '#777bb4',
-      Go: '#00add8',
-      Rust: '#000000',
-      Swift: '#fa7343',
-      Kotlin: '#7f52ff'
+      Go: '#00add8'
     };
     return colors[language] || '#6b7280';
   };
 
-  const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('th-TH', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
-
-  // Featured projects (mock data for showcase)
+  // Featured projects
   const featuredProjects = [
     {
       title: "MyFavFood", 
-      description: "Backend management restaurant system that help employee can do everything in one stop service OPS",
+      description: "Backend management restaurant system that helps employees do everything in one stop service",
       image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["HTML", "CSS", "Node.js", "MySQL"],
-      liveUrl: "https://demo-ecommerce.com",
       githubUrl: "https://github.com/YKUNAKORN/MyFavFood-Project"
     },
     {
       title: "CareFeine App", 
-      description: "A mobile app for managing litmit your caffeine intake and track your health for a day",
+      description: "A mobile app for managing limit your caffeine intake and track your health",
       image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Fultter", "Figma",],
-      liveUrl: "https://task-manager-demo.com",
+      technologies: ["Flutter", "Figma"],
       githubUrl: "https://github.com/YKUNAKORN/CareFeine"
     },
     {
       title: "Do-Covid", 
-      description: "The website that report Covid-19 situation in Thailand with real-time data and statistics",
+      description: "The website that reports Covid-19 situation in Thailand with real-time data",
       image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["HTML", "CSS", "Javascript", "FastAPI"],
-      liveUrl: "https://analytics-demo.com",
       githubUrl: "https://github.com/YKUNAKORN/Do-Covid-2021"
     }
   ];
 
   return (
-    <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-gray-900 to-black">
-      <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="fade-in-up text-center mb-16 opacity-0">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+    <section id="projects" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-6">
             My Projects
           </h2>
-          <p className="font-['IBM_Plex_Mono'] text-l text-white/70 max-w-3xl mx-auto">
-            Project that showcase development capabilities and experience
+          <p className="font-['IBM_Plex_Mono'] text-gray-600 max-w-2xl mx-auto">
+            Projects that showcase development capabilities and experience
           </p>
         </div>
 
         {/* Featured Projects */}
-        <div className="fade-in-up opacity-0 mb-20" style={{ animationDelay: '0.2s' }}>
-          <h3 className="text-2xl font-bold text-white mb-8 flex items-center"> 
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full mr-4"></div>
-            Featured Projects
-          </h3>
+        <div className="mb-16">
+          <h3 className="text-2xl font-light text-gray-900 mb-8">Featured Projects</h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <div
-                key={index}
-                className="fade-in-up opacity-0 group bg-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-white/5"
-                style={{ animationDelay: `${index * 0.2 + 0.4}s` }}
-              >
-                <div className="relative overflow-hidden">
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
-                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
-                    {project.title}
-                  </h4>
-                  <p className="font-['IBM_Plex_Mono'] text-white/70 mb-4 leading-relaxed text-sm">
-                    {project.description}
-                  </p>
+                  <h4 className="text-xl font-medium text-gray-900 mb-3">{project.title}</h4>
+                  <p className="font-['IBM_Plex_Mono'] text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-xl rounded-full text-xs font-medium text-white border border-white/20"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 hover:scale-105 shadow-lg"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-white/10 backdrop-blur-xl text-white text-sm font-medium rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </div>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    View Code
+                  </a>
                 </div>
               </div>
             ))}
@@ -188,54 +130,43 @@ const Projects = () => {
         </div>
 
         {/* GitHub Repositories */}
-        <div className="fade-in-up opacity-0" style={{ animationDelay: '1s' }}>
-          <h3 className="text-2xl font-bold text-white mb-8 flex items-center"> 
-            <div className="w-2 h-8 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mr-4"></div>
-            GitHub Repositories
-          </h3>
+        <div>
+          <h3 className="text-2xl font-light text-gray-900 mb-8">GitHub Repositories</h3>
           {loading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-2xl rounded-2xl p-6 border border-white/10 animate-pulse">
-                  <div className="h-4 bg-white/20 rounded w-3/4 mb-4"></div>
-                  <div className="h-3 bg-white/20 rounded w-full mb-2"></div>
-                  <div className="h-3 bg-white/20 rounded w-2/3 mb-4"></div>
+                <div key={index} className="bg-white rounded-xl p-6 border border-gray-100 animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                  <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
+                  <div className="h-3 bg-gray-200 rounded w-2/3 mb-4"></div>
                   <div className="flex space-x-4">
-                    <div className="h-3 bg-white/20 rounded w-16"></div>
-                    <div className="h-3 bg-white/20 rounded w-16"></div>
+                    <div className="h-3 bg-gray-200 rounded w-16"></div>
+                    <div className="h-3 bg-gray-200 rounded w-16"></div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {repositories.slice(0, 9).map((repo, index) => (
-                <div
-                  key={repo.id}
-                  className="fade-in-up opacity-0 group bg-white/5 backdrop-blur-2xl rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-white/5"
-                  style={{ animationDelay: `${index * 0.1 + 1.2}s` }}
-                >
+              {repositories.slice(0, 6).map((repo, index) => (
+                <div key={repo.id} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow duration-200">
                   <div className="flex justify-between items-start mb-4">
-                    <h4 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors duration-300 truncate pr-2">
-                      {repo.name}
-                    </h4>
+                    <h4 className="text-lg font-medium text-gray-900 truncate pr-2">{repo.name}</h4>
                     <a
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/50 hover:text-white transition-colors duration-300 hover:scale-110"
+                      className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
                     >
                       <Github className="w-5 h-5" />
                     </a>
                   </div>
                   
                   {repo.description && (
-                    <p className="text-white/70 text-sm mb-4 leading-relaxed line-clamp-3">
-                      {repo.description}
-                    </p>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{repo.description}</p>
                   )}
 
-                  <div className="flex items-center space-x-4 mb-4 text-xs text-white/50">
+                  <div className="flex items-center space-x-4 mb-4 text-xs text-gray-500">
                     {repo.language && (
                       <div className="flex items-center">
                         <div
@@ -260,7 +191,7 @@ const Projects = () => {
                       {repo.topics.slice(0, 3).map((topic, topicIndex) => (
                         <span
                           key={topicIndex}
-                          className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-400/30"
+                          className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
                         >
                           {topic}
                         </span>
@@ -268,20 +199,17 @@ const Projects = () => {
                     </div>
                   )}
 
-                  <div className="flex justify-between items-center text-xs text-white/40">
-                    <span>Updated {formatDate(repo.updated_at)}</span>
-                    {repo.homepage && (
-                      <a
-                        href={repo.homepage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                      >
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Demo
-                      </a>
-                    )}
-                  </div>
+                  {repo.homepage && (
+                    <a
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      View Demo
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
@@ -289,15 +217,15 @@ const Projects = () => {
         </div>
 
         {/* View More Button */}
-        <div className="fade-in-up opacity-0 text-center mt-12" style={{ animationDelay: '1.5s' }}>
+        <div className="text-center mt-12">
           <a
             href="https://github.com/YKUNAKORN"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
+            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors duration-200"
           >
             <Github className="w-5 h-5 mr-2" />
-            View More Projects on GitHub
+            View More on GitHub
           </a>
         </div>
       </div>
