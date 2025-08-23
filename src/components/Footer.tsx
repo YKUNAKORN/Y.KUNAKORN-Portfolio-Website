@@ -7,12 +7,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-white/10">
+    <footer className="bg-[black] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0">
           <div className="text-white/100">
             <p>&copy; 2025 Y.KUNAKORN. All rights reserved.</p>
-            <p className="text-sm mt-1">Crafted with passion and precision</p>
+            <p className="text-sm mt-1 font-['IBM_Plex_Mono']">Crafted with passion and precision</p>
           </div>
           
           <button

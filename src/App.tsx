@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,10 +8,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const [animateHero, setAnimateHero] = useState(false);
+
   useEffect(() => {
     // Smooth scrolling for the entire page
     document.documentElement.style.scrollBehavior = 'smooth';
-    
+
     // Add custom CSS animations
     const style = document.createElement('style');
     style.textContent = `
@@ -27,57 +29,60 @@ function App() {
       }
       
       .animate-fadeInUp {
-        animation: fadeInUp 0.8s ease-out forwards;
+        animation: fadeInUp 1s ease-out forwards;
       }
-      
-      .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2);
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background-color: #000000;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(to bottom, #34D399, #22D3EE);
-      }
-      
-      /* Enhanced smooth transitions */
-      * {
-        transition-property: transform, opacity, background-color, border-color, color, fill, stroke, box-shadow, backdrop-filter;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in-out;
+
+      .before-animate {
+        opacity: 0;
+        transform: translateY(50px);
       }
     `;
     document.head.appendChild(style);
 
+    // Trigger animation after mount (only for Hero)
+    setTimeout(() => setAnimateHero(true), 100);
+
+    // Setup IntersectionObserver for other sections
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
     // Cleanup
     return () => {
       document.head.removeChild(style);
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden">
       <Navigation />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+
+      <Hero className={animateHero ? 'animate-fadeInUp' : 'opacity-0'} />
+
+      <div className="reveal-on-scroll before-animate">
+        <About />
+      </div>
+      <div className="reveal-on-scroll before-animate">
+        <Experience />
+      </div>
+      <div className="reveal-on-scroll before-animate">
+        <Projects />
+      </div>
+        <Contact />
+        <Footer />
     </div>
   );
 }

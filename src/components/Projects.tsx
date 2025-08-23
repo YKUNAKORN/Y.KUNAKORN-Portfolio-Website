@@ -56,14 +56,14 @@ const Projects = () => {
     {
       title: "MyFavFood", 
       description: "Backend management restaurant system that helps employees do everything in one stop service",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://images.pexels.com/photos/1603901/pexels-photo-1603901.jpeg",
       technologies: ["HTML", "CSS", "Node.js", "MySQL"],
       githubUrl: "https://github.com/YKUNAKORN/MyFavFood-Project"
     },
     {
       title: "CareFeine App", 
       description: "A mobile app for managing limit your caffeine intake and track your health",
-      image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg",
       technologies: ["Flutter", "Figma"],
       githubUrl: "https://github.com/YKUNAKORN/CareFeine"
     },
@@ -80,7 +80,7 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-light bg-gradient-to-t from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-6">
             My Projects
           </h2>
           <p className="font-['IBM_Plex_Mono'] text-gray-600 max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const Projects = () => {
           <h3 className="text-2xl font-light text-gray-900 mb-8">Featured Projects</h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={project.image}
@@ -118,8 +118,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200"
-                  >
+                    className="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200">
                     <Github className="w-4 h-4 mr-2" />
                     View Code
                   </a>
@@ -135,7 +134,7 @@ const Projects = () => {
           {loading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-gray-100 animate-pulse">
+                <div key={index} className="bg-white rounded-xl p-6 animate-pulse">
                   <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
                   <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
                   <div className="h-3 bg-gray-200 rounded w-2/3 mb-4"></div>
@@ -149,7 +148,7 @@ const Projects = () => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {repositories.slice(0, 6).map((repo, index) => (
-                <div key={repo.id} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow duration-200">
+                <div key={repo.id} className="bg-white rounded-xl p-6 hover:shadow-md transition-shadow duration-200">
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-lg font-medium text-gray-900 truncate pr-2">{repo.name}</h4>
                     <a
@@ -222,8 +221,7 @@ const Projects = () => {
             href="https://github.com/YKUNAKORN"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors duration-200"
-          >
+            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-2xl hover:bg-gray-800 transition-colors duration-200">
             <Github className="w-5 h-5 mr-2" />
             View More on GitHub
           </a>
