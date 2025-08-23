@@ -69,9 +69,7 @@ function App() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       <Navigation />
-
       <Hero className={animateHero ? 'animate-fadeInUp' : 'opacity-0'} />
-
       <div className="reveal-on-scroll before-animate">
         <About />
       </div>

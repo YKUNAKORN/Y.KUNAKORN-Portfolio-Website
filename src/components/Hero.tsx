@@ -40,25 +40,19 @@ const Hero = ({ className = '' }) => {
               href="https://github.com/YKUNAKORN"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm 
-              hover:shadow-md hover:scale-110 transition-all duration-300"
-            >
+              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300">
               <Github className="w-5 h-5 text-gray-700" />
             </a>
             <a
               href="https://www.linkedin.com/in/kunakorn-yamngam-932069338/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm 
-              hover:shadow-md hover:scale-110 transition-all duration-300"
-            >
+              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300">
               <Linkedin className="w-5 h-5 text-gray-700" />
             </a>
             <a
               href="mailto:kunakorn.contact@gmail.com"
-              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm 
-              hover:shadow-md hover:scale-110 transition-all duration-300"
-            >
+              className="p-3 rounded-2xl bg-white/60 backdrop-blur-lg shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300">
               <Mail className="w-5 h-5 text-gray-700" />
             </a>
           </div>

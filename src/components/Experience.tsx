@@ -165,7 +165,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* Certificate Marquee (Full width) */}
+      {/* Certificate Marquee */}
       <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 flex flex-col items-center mt-16">
         <h3 className="text-xl font-medium text-gray-900 mb-6">Certificate</h3>
         <div className="relative w-full overflow-hidden group">
