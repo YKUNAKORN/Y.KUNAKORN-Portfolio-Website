@@ -61,7 +61,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-[#666666] mb-8">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 <a
-                  href="https://www.instagram.com/this.kao/"
+                  href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 p-4 rounded-2xl bg-white text-[#666666] transition-colors duration-[500ms] hover:bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:text-white">
