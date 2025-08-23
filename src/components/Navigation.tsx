@@ -8,7 +8,7 @@ const Navigation = () => {
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
     { id: 'experience', label: 'Path', icon: Briefcase },
-    { id: 'projects', label: 'Projects', icon: FolderOpen },
+    { id: 'projects', label: 'Project', icon: FolderOpen },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 
@@ -62,24 +62,28 @@ const Navigation = () => {
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`group flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 transform ${
-                  isActive
-                    ? 'bg-white/20 scale-110 shadow-lg shadow-white/10 px-10'
-                    : 'hover:bg-white/10 hover:scale-105'
-                }`}
+                className={`group flex flex-col items-center justify-center 
+                  w-8 h-8 rounded-lg transition-all duration-300 transform
+                  sm:w-14 sm:h-14 sm:rounded-2xl
+                  ${isActive
+                    ? 'bg-white/20 scale-105 shadow-lg shadow-white/10 px-8'
+                    : 'hover:bg-white/10 hover:scale-110'
+                  }`}
               >
                 <IconComponent 
-                  className={`w-5 h-5 mb-1 transition-colors duration-300 ${
-                    isActive ? 'text-white' : 'text-white/70 group-hover:text-white'
-                  }`} 
+                  className={`w-4 h-4 mb-0.5 transition-colors duration-300
+                    sm:w-5 sm:h-5 sm:mb-1
+                    ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}
+                  `} 
                 />
-                <span className={`text-xs font-mono transition-colors duration-300 ${
-                  isActive ? 'text-white' : 'text-white/70 group-hover:text-white'
-                }`}>
+                <span className={`text-[9px] font-mono transition-colors duration-300
+                  sm:text-xs
+                  ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}
+                `}>
                   {section.label}
                 </span>
                 {isActive && (
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full shadow-lg shadow-blue-400/50" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full shadow-lg shadow-blue-400/50 sm:w-3 sm:h-3" />
                 )}
               </button>
             );
