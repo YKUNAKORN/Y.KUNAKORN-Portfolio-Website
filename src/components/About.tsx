@@ -55,11 +55,11 @@ const About = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           
           {/* Personal Story Section */}
           <div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-sm">
               <h3 className="text-2xl font-light text-gray-900 mb-6">
                 My Journey
               </h3>
@@ -98,7 +98,7 @@ const About = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                className="bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
                 <div className="flex items-start space-x-4">
                   {/* Skill Icon */}
                   <div className="p-2 bg-gray-100 rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400">

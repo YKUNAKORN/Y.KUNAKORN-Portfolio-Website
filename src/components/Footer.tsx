@@ -17,7 +17,7 @@ const Footer = () => {
           
           <button
             onClick={scrollToTop}
-            className="group p-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25"
+            className="group p-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 hidden sm:block"
           >
             <ArrowUp className="w-5 h-5 text-white group-hover:-translate-y-1 transition-transform duration-300" />
           </button>

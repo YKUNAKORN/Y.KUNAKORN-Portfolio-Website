@@ -23,10 +23,10 @@ const Hero = ({ className = '' }) => {
       {/* Content */}
       <div className={`relative z-10 text-center max-w-5xl mx-auto ${className}`}>
         <div className="space-y-10">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
             Y.KUNAKORN
           </h1>
-          <p className="text-xl sm:text-2xl text-black font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-2xl text-black font-light max-w-2xl mx-auto leading-relaxed">
             Full Stack Developer & Creative Technologist
           </p>
           <p className="font-['IBM_Plex_Mono'] text-gray-500 max-w-xl mx-auto leading-relaxed">

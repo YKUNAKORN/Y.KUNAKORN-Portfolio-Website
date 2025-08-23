@@ -89,12 +89,12 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Experience */}
           <div className="lg:col-span-2 space-y-6">
             <h3 className="text-xl font-medium text-gray-900 mb-6">Experience</h3>
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6">
+              <div key={index} className="bg-gray-50 rounded-xl p-4 sm:p-6">
                 <div className="mb-4">
                   <h4 className="text-lg font-medium text-gray-900 mb-2">{exp.title}</h4>
                   <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
@@ -128,7 +128,7 @@ const Experience = () => {
             <div>
               <h3 className="text-xl font-medium text-gray-900 mb-6">Education</h3>
               {education.map((edu, index) => (
-                <div key={index} className="bg-gray-50 rounded-xl p-6">
+                <div key={index} className="bg-gray-50 rounded-xl p-4 sm:p-6">
                   <h4 className="font-medium text-gray-900 mb-2">{edu.degree}</h4>
                   <p className="font-['IBM_Plex_Mono'] text-gray-700 mb-2">{edu.school}</p>
                   <div className="flex justify-between text-sm text-gray-600">
@@ -142,7 +142,7 @@ const Experience = () => {
             {/* Technical Skills */}
             <div>
               <h3 className="text-xl font-medium text-gray-900 mb-6">Technical Skills</h3>
-              <div className="bg-gray-50 rounded-xl p-6">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-6">
                 <div className="space-y-4">
                   {skills.map((item, index) => (
                     <div key={index}>
@@ -173,7 +173,7 @@ const Experience = () => {
             {marqueeCertificates.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[320px] max-w-xs border border-gray-300">
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[220px] sm:min-w-[320px] max-w-xs border border-gray-300">
                 <img
                   src={project.image}
                   alt={project.title}

@@ -20,10 +20,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-[#f5f5f7] rounded-3xl p-8 shadow-sm">
+            <div className="bg-[#f5f5f7] rounded-3xl p-4 sm:p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-[#666666] mb-8">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
           </div>
           {/* Social Media Links */}
-            <div className="bg-[#f5f5f7] rounded-3xl p-8  shadow-sm">
+            <div className="bg-[#f5f5f7] rounded-3xl p-4 sm:p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-[#666666] mb-8">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 <a

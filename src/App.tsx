@@ -27,7 +27,7 @@ function App() {
           transform: translateY(0);
         }
       }
-      
+
       .animate-fadeInUp {
         animation: fadeInUp 1s ease-out forwards;
       }
@@ -36,6 +36,31 @@ function App() {
         opacity: 0;
         transform: translateY(50px);
       }
+         .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background-color: #000000;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #34D399, #22D3EE);
+      }
+      
+ 
     `;
     document.head.appendChild(style);
 
