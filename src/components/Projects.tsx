@@ -46,7 +46,8 @@ const Projects = () => {
       React: '#61dafb',
       Vue: '#4fc08d',
       PHP: '#777bb4',
-      Go: '#00add8'
+      Go: '#00add8',
+      Flutter: '#042B59'
     };
     return colors[language] || '#6b7280';
   };
