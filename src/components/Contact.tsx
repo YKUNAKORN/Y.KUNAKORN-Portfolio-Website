@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
-import { Mail, Phone, Instagram, Facebook, Linkedin, Github, Send, MapPin } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Linkedin, Github, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
   return (
     <section id="contact" className="py-32 relative overflow-hidden bg-white">
       <div className="container mx-auto px-6 relative z-10">

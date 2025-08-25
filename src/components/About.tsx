@@ -1,8 +1,6 @@
-import React from 'react';
 import { Code, Palette, Zap, Heart } from 'lucide-react';
 
 const About = () => {
-  // Skills data configuration
   const skills = [
     {
       icon: <Code className="w-6 h-6" />,
@@ -16,7 +14,7 @@ const About = () => {
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Cer",
+      title: "Performance Optimization",
       description: "Optimizing website performance for speed and stability"
     },
     {
@@ -26,7 +24,6 @@ const About = () => {
     }
   ];
 
-  // Tech stack data
   const techStack = [
     'Javascript',
     'TypeScript', 

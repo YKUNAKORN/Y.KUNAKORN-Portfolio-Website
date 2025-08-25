@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ExternalLink, Github, Star, GitFork } from 'lucide-react';
 
 interface Repository {
@@ -51,7 +51,6 @@ const Projects = () => {
     return colors[language] || '#6b7280';
   };
 
-  // Featured projects
   const featuredProjects = [
     {
       title: "MyFavFood", 
@@ -88,7 +87,6 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Featured Projects */}
         <div className="mb-16">
           <h3 className="text-2xl font-light text-gray-900 mb-8">Featured Projects</h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -128,7 +126,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* GitHub Repositories */}
         <div>
           <h3 className="text-2xl font-light text-gray-900 mb-8">GitHub Repositories</h3>
           {loading ? (
@@ -147,7 +144,7 @@ const Projects = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {repositories.slice(0, 6).map((repo, index) => (
+              {repositories.slice(0, 6).map((repo) => (
                 <div key={repo.id} className="bg-white rounded-xl p-4 sm:p-6 hover:shadow-md transition-shadow duration-200">
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-lg font-medium text-gray-900 truncate pr-2">{repo.name}</h4>
@@ -215,7 +212,6 @@ const Projects = () => {
           )}
         </div>
 
-        {/* View More Button */}
         <div className="text-center mt-12">
           <a
             href="https://github.com/YKUNAKORN"

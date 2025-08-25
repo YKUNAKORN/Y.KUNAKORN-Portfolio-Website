@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,63 +11,10 @@ function App() {
   const [animateHero, setAnimateHero] = useState(false);
 
   useEffect(() => {
-    // Smooth scrolling for the entire page
     document.documentElement.style.scrollBehavior = 'smooth';
 
-    // Add custom CSS animations
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .animate-fadeInUp {
-        animation: fadeInUp 1s ease-out forwards;
-      }
-
-      .before-animate {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-         .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2);
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background-color: #000000;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(to bottom, #34D399, #22D3EE);
-      }
-      
- 
-    `;
-    document.head.appendChild(style);
-
-    // Trigger animation after mount (only for Hero)
     setTimeout(() => setAnimateHero(true), 100);
 
-    // Setup IntersectionObserver for other sections
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -84,9 +31,7 @@ function App() {
       observer.observe(el);
     });
 
-    // Cleanup
     return () => {
-      document.head.removeChild(style);
       observer.disconnect();
     };
   }, []);

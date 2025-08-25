@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
@@ -49,30 +48,29 @@ const Experience = () => {
       title: "Essential of SQL for Everyone", 
       description: "Free SQL online course from Born to Dev",
       image: "/assets/images/essential-sql-for-everyone.webp",
-      expore: "https://drive.google.com/file/d/10Zo9KI7mMP1hILYjjaIDeQu3QL_qGS_s/view?usp=drive_link"
+      explore: "https://drive.google.com/file/d/10Zo9KI7mMP1hILYjjaIDeQu3QL_qGS_s/view?usp=drive_link"
     },
     {
       title: "Certificate CEFR B2", 
       description: "EF-SET an online English proficiency test has been developed over a decade.",
       image: "/assets/images/ef-set-certificate.jpg",
-      expore: "https://www.efset.org/"
+      explore: "https://drive.google.com/file/d/1uwR2VhT3bXHrNUBZ3waZOv1aZDXffM-0/view?usp=drivesdk"
     },
     {
       title: "SWU Metaverse", 
       description: "Hand-on workshop and competition to create a Srinakharinwirot University into metaverse",
       image: "/assets/images/swu-mataverse.jpg",
-      expore: "https://drive.google.com/file/d/1OFU8bozyLK2NEJFO4hHiwUBum0ZnLCtH/view?usp=drive_link"
+      explore: "https://drive.google.com/file/d/1OFU8bozyLK2NEJFO4hHiwUBum0ZnLCtH/view?usp=drive_link"
     },
     {
       title: "Agentic AI for Healthcare Hackathon", 
       description: "Creating healthcare solutions with our Intelligent Agentic AI",
       image: "/assets/images/cmkl-hackathon.png",
-      expore: "https://drive.google.com/drive/folders/1xB2BeORyNaL1qv1ipytlDN6Hdp_J9LEf?usp=sharing"
+      explore: "https://drive.google.com/drive/folders/1xB2BeORyNaL1qv1ipytlDN6Hdp_J9LEf?usp=sharing"
     }
   ];
   
-  // Duplicate Certificate array to make the marquee long enough
-  const MARQUEE_REPEAT = 4; // Adjust the repeat count for desired width
+  const MARQUEE_REPEAT = 8;
   const marqueeCertificates = Array(MARQUEE_REPEAT)
     .fill(certificate)
     .flat();
@@ -169,11 +167,11 @@ const Experience = () => {
       <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 flex flex-col items-center mt-16">
         <h3 className="text-xl font-medium text-gray-900 mb-6">Certificate</h3>
         <div className="relative w-full overflow-hidden group">
-          <div className="flex gap-8 animate-marquee group-hover:[animation-play-state:paused]">
+          <div className="flex gap-8 animate-marquee group-hover:[animation-play-state:paused] will-change-transform">
             {marqueeCertificates.map((project, index) => (
               <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[220px] sm:min-w-[320px] max-w-xs border border-gray-300">
+                key={`${index}-${project.title}`}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[220px] sm:min-w-[320px] max-w-xs border border-gray-300 flex-shrink-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -183,7 +181,7 @@ const Experience = () => {
                   <h4 className="text-xl font-medium text-gray-900 mb-3">{project.title}</h4>
                   <p className="font-['IBM_Plex_Mono'] text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
                   <a
-                    href={project.expore}
+                    href={project.explore}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200">

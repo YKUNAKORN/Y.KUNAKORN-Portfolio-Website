@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, User, Briefcase, FolderOpen, Mail } from 'lucide-react';
 
 const Navigation = () => {
